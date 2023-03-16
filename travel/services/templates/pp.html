@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy Page</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: medium;
+            
+        }
+
+    .pp {
+        display: block;
+        width: 45%;
+        height: 10%;
+        border: 2px solid black;
+        background-color:whitesmoke;
+        padding: 30px 0;
+        margin: 25%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    }
+   
+    </style>
+</head>
+
+<body>
+    <div class="heading" style="background:url(/static/images/header-bg-2.png) no-repeat">
+        <h1>Privacy Policy </h1>
+     </div>
+    <div class="pp">
+
+        
+        <p>Your privacy is very important to us.   We do not sell or rent your personal information to third parties Your name,<br> Your personal information and especially your credit card number are never stored on the Internet with out system.</p>
+        <p>Once you type your information, it is sent instantly,encrypted,directly to our order processing system, which is on a server separate from the internrt.</p>
+        <p>This is done to protect you from unauthorized use of the information you are sending to our server.</p>
+    </div>
+    
+</body>
+</html>
+{% endblock%}
