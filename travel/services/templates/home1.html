@@ -33,7 +33,9 @@
       <a href="/gallary">Gallary</a>
       <a href="/contactus">Contact US</a>
       <a href="" class="login">Profile</a>
-      <a href="/" class="logout">Logout</a>
+      <a href="{% url 'logout_then_login' %}" class="logout">Logout</a>
+      <a href="{% url 'change_password' %}" class="changepassword">Change Password</a>
+
         
       
       

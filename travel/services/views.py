@@ -1,13 +1,28 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView,FormView
+from .models import Registration
 from django.http import HttpResponse
+from .forms import *
 
-def homepage(request):
-    return render(request,"home.html")
+
+class UserRegistration(CreateView,FormView):
+    model=Registration
+    form_class=Userform
+    template_name = 'signin.html'
+    success_url= '/homepage/'
+
+
+def add_show(request):
+    return render(request,'home.html')
 
 def signup(request):
     return render(request,"signin.html")
 
+def homepage(request):
+    return render(request,"home.html")
 
+def home1(request):
+    return render(request,"home1.html")
 
 def package(request):
     return render(request,"package.html")
