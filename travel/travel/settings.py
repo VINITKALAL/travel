@@ -91,9 +91,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-LOGIN_REDIRECT_URL = '/home1/'
 
 
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/homepage/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

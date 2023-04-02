@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+<body>
+    <section class="booking">
+
+        <h1 class="heading-title">My Profile</h1>
+     
+        <form action="/payment" method="post" class="book-form">
+     
+           <div class="flex">
+              <div class="inputBox">
+                 <span>first name :</span>
+                 <input type="text" placeholder="Your First Name is :" name="name">
+              </div>
+              <div class="inputBox">
+               <span>last name : </span>
+               <input type="text" placeholder="Your Last Name is :" name="name">
+            </div>
+              <div class="inputBox">
+                 <span>email id :</span>
+                 <input type="text" placeholder="Your Email ID is : " name="email">
+              </div>
+              
+              <br>
+        </form>
+     
+     </section>
+</body>
+</html>
+{% endblock  %}

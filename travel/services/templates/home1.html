@@ -18,28 +18,58 @@
 
 </head>
 <body>
-   
 <!-- header section starts  -->
 
 <section class="header">
-
    <a class="logo" href="/">
       <img src="/static/images/finallogo.png" alt width="200" height="85">
    </a>
    <nav class="navbar">
-      <div class="log">
-        <a href="/">home</a>
-      <a href="/package">package</a>
-      <a href="/gallary">Gallary</a>
-      <a href="/contactus">Contact US</a>
-      <a href="" class="login">Profile</a>
-      <a href="{% url 'logout_then_login' %}" class="logout">Logout</a>
-      <a href="{% url 'change_password' %}" class="changepassword">Change Password</a>
+    <ul>
+        <li><a href="{% url 'homepage' %}">home</a></li>
+        <li><a href="/package">package</a></li>
+        <li><a href="/gallary">Gallary</a></li>
+        <li><a href="/contactus">Contact</a></li>
+        <li><img src="{{request.user.photo.url}}" alt="" class="user-pic" onclick="togglemenu()"></li>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="{{request.user.photo.url}}" alt="" >
+                    <h3>{{request.user.first_name}}</h3>
+                </div>
+                <hr>
+                <a href="" class="sub-menu-link">
+                    <img src="/static/images/profile.png" alt="">
+                    <p>My Profile</p>
+                </a>
+                <a href="" class="sub-menu-link">
+                    <img src="/static/images/setting.png" alt="">
+                    <p>Change Profile</p>
+                </a>
+                <a href="{% url 'change_password' %}" class="sub-menu-link">
+                    <img src="/static/images/help.png" alt="">
+                    <p>Change Password</p>
+                </a>
+                <a href="{% url 'logout_then_login' %}" class="sub-menu-link">
+                    <img src="/static/images/logout.png" alt="">
+                    <p>Logout</p>
+                </a>
+            </div>
+        </div>
+        </ul>
+    </li>
+    </ul>
+    </nav>
 
-        
-      
-      
-   </nav>
+
+
+
+
+   <!-- <a href="" class="login">Profile</a>
+    
+    <a href="" class="changepassword">Change Password</a> -->
+
+
 
    <div id="menu-btn" class="fas fa-bars"></div>
 
@@ -104,54 +134,24 @@
         <h1 class="heading-title"> our packages </h1>
 
         <div class="box-container">
-
+            {% for i in packages %}
             <div class="box">
                 <div class="image">
-                    <img src="/static/images/download (1).jpg" alt="">
+                    <img src="{{i.photo.url}}" alt="">
                 </div>
                 <div class="content">
-                    <h3>DWARKA-SOMNATH</h3>
-                    <h2>3 Nights/4 Days</h2>
-                    <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt
-                        vehicle as per program Applicable hotel taxes</p>
+                    <h3>{{i.name}}</h3>
+                    <h2>{{i.duration}}</h2>
+                    <p>{{i.description}}</p>
                     <h1>Starting From</h1>
-                    <h3>12,600/-INR</h3>
+                    <h3>{{i.Price}}</h3>
 
                     <a href="/signup" class="btn">book now</a>
                 </div>
+            </div>   
+            {% endfor %}         
             </div>
 
-            <div class="box">
-                <div class="image">
-                    <img src="/static/images/download (2).jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>WILDLIFE AND BEACH</h3>
-                    <h2>4 Nights/5 Days</h2>
-                    <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt
-                        vehicle as per program Applicable hotel taxes</p>
-                    <h1>Starting From</h1>
-                    <h3>21,500/-INR</h3>
-                    <a href="/signup" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="/static/images/download (3).jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>STATUE OF UNITY </h3>
-                    <h2>7 Nights/8 Days</h2>
-                    <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt
-                        vehicle as per program Applicable hotel taxes</p>
-                    <h1>Starting From</h1>
-                    <h3>27,100/-INR</h3>
-                    <a href="/signup" class="btn">book now</a>
-                </div>
-            </div>
-
-        </div>
 
         <div class="load-more"> <a href="/package" class="btn">load more</a> </div>
 
@@ -247,8 +247,8 @@
         <div class="box-container">
      
            <div class="box">
-              <h3>quick links</h3>
-              <a href="/"> <i class="fas fa-angle-right"></i> home</a>
+              <h3>quick links</h3>  
+              <a href=""> <i class="fas fa-angle-right"></i> home</a>
               <a href="/package"> <i class="fas fa-angle-right"></i> package</a>
               <a href="/gallary"> <i class="fas fa-angle-right"></i> Gallary</a>
               <a href="/contactus"> <i class="fas fa-angle-right"></i>Contactus</a>

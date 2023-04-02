@@ -32,231 +32,32 @@
 
 <section class="home-packages">
    
-   <h1 class="heading-title"> Top Destination </h1>
+   <h1 class="heading-title"> Our Packages </h1>
 
    <div class="box-container">
 
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/download (1).jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>DWARKA-SOMNATH</h3>
-            <h2>3 Nights/4 Days</h2>
-            <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt vehicle as per program Applicable hotel taxes</p>
-            <h1>Starting From</h1>
-            <h3>12,600/-INR</h3>
-            
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
+      {% for i in packages %}
+            <div class="box">
+                <div class="image">
+                    <img src="{{i.photo.url}}" alt="">
+                </div>
+                <div class="content">
+                    <h3>{{i.name}}</h3>
+                    <h2>{{i.duration}}</h2>
+                    <p>{{i.description}}</p>
+                    <h1>Starting From</h1>
+                    <h3>{{i.Price}}</h3>
 
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/download (2).jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>WILDLIFE AND BEACH</h3>
-            <h2>4 Nights/5 Days</h2>
-            <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt vehicle as per program Applicable hotel taxes</p>
-            <h1>Starting From</h1>
-            <h3>21,500/-INR</h3>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-      
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/download (3).jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>STATUE OF UNITY </h3>
-            <h2>7 Nights/8 Days</h2>
-            <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt vehicle as per program Applicable hotel taxes</p>
-            <h1>Starting From</h1>
-            <h3>27,100/-INR</h3>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
+                    <a href="/signup" class="btn">book now</a>
+                </div>
+            </div>   
+            {% endfor %}
    </div>
 
-   <div class="load-more"> <a href="/package" class="btn">load more</a> </div>
 
 </section>
 <!-- packages section starts  -->
 
-<section class="packages">
-
-   <h1 class="heading-title">Our Packages</h1>
-
-   <div class="box-container">
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-1.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>Delhi Agra Tour</h3>
-            <h2>03 Nights/04 Days</h2>
-            <p>Rastrapati Bhawan,Parliament House,Jantar Mantar & India Gate.
-               Raj Ghat,Lotus Temple,Akshardham Temple,Taj Mahal
-            </p>
-            <h1>Starting From</h1>
-               <h3>10,600/-INR</h3>
-            
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-2.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>Natural Kerala</h3>
-            <h2>05 Nights/06 Days</h2>
-            <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt vehicle as per program Applicable hotel taxes</p>
-            <h1>Starting From</h1>
-               <h3>13,500/-INR</h3>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-6.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>Goa Tour Package</h3>
-            <h2>05 Nights/06 Days</h2>
-            <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt vehicle as per program Applicable hotel taxes</p>
-            <h1>Starting From</h1>
-               <h3>7,999/-INR</h3>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-4.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>Darjeeling,Gangtok <br>
-               Sikkim</h3>
-               <h2>07 Nights/ 08 Days</h2>
-            <p>The Capital of Sikkim,Tsomgo Lake(12,400ft),
-               Baba Harbhajan Singh Memorial,
-               The Spectacular Eastern Himalyan Range from Pelling
-            </p>
-            <h1>Starting From</h1>
-               <h3>32,999/-INR</h3>
-            
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-5.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>Div Daman</h3>
-            <h2>02 Night/03 Days</h2>
-            <h3>Jalesh Cruise with Div <br>(Inside Cabin)</h3>     
-                   <p>Div Daman Jalesh Cruise with Div(Inside Cabin) Paty Nights! Let's Enjoy!  2 Night/ 3 Days</p>
-                   <h1>Starting From</h1>
-               <h3>24,999/-INR</h3>
-            
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-6.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>Sizzling Kutch</h3>
-            <h2>07 Nights/08 Days</h2>
-            <p>Accomodation on double sharing breakfast and dinner at hotel Transfer and sightseeing by pvt vehicle as per program Applicable hotel taxes</p>
-            <h1>Starting From</h1>
-               <h3>32,999/-INR</h3>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-7.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>adventure & tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-8.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>adventure & tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-9.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>adventure & tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-10.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>adventure & tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-11.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>adventure & tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-      <div class="box">
-         <div class="image">
-            <img src="/static/images/img-12.jpg" alt="">
-         </div>
-         <div class="content">
-            <h3>adventure & tour</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-            <a href="/signup" class="btn">book now</a>
-         </div>
-      </div>
-
-   </div>
-
-   <div class="load-more"><span class="btn">load more</span></div>
-
-</section>
 
 <!-- packages section ends -->
 

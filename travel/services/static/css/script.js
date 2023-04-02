@@ -1,5 +1,9 @@
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .navbar');
+let subMenu = document.getElementById("subMenu");
+function togglemenu(){
+subMenu.classList.toggle("open-menu");
+}
 
 menu.onclick = () =>{
    menu.classList.toggle('fa-times');
