@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallary1</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+    <section class="header">
+        <a class="logo" href="/">
+           <img src="/static/images/finallogo.png" alt width="200" height="85">
+        </a>
+        <nav class="navbar">
+         <ul>
+             <li><a href="{% url 'homepage' %}">home</a></li>
+             <li><a href="/package1">package</a></li>
+             <li><a href="/gallary1">Gallary</a></li>
+             <li><a href="/contact1">Contact</a></li>
+             <li><img src="{{request.user.photo.url}}" alt="" class="user-pic" onclick="togglemenu()"></li>
+             <div class="sub-menu-wrap" id="subMenu">
+                 <div class="sub-menu">
+                     <div class="user-info">
+                         <img src="{{request.user.photo.url}}" alt="" >
+                         <h3>{{request.user.first_name}}</h3>
+                     </div>
+                     <hr>
+                     <a href="" class="sub-menu-link">
+                         <img src="/static/images/profile.png" alt="">
+                         <p>My Profile</p>
+                     </a>
+                     <a href="" class="sub-menu-link">
+                         <img src="/static/images/setting.png" alt="">
+                         <p>Change Profile</p>
+                     </a>
+                     <a href="{% url 'change_password' %}" class="sub-menu-link">
+                         <img src="/static/images/help.png" alt="">
+                         <p>Change Password</p>
+                     </a>
+                     <a href="{% url 'logout_then_login' %}" class="sub-menu-link">
+                         <img src="/static/images/logout.png" alt="">
+                         <p>Logout</p>
+                     </a>
+                 </div>
+             </div>
+             </ul>
+         </li>
+         </ul>
+         </nav>
+     
+     
+     
+     
+     
+        <!-- <a href="" class="login">Profile</a>
+         
+         <a href="" class="changepassword">Change Password</a> -->
+     
+     
+     
+        <div id="menu-btn" class="fas fa-bars"></div>
+     
+     </section>
+    <div class="heading" style="background:url(/static/images/header-bg-1.png) no-repeat">
+        <h1>Gallary </h1>
+     </div>
+     
+     <!-- packages section starts  -->
+     
+     <section class="packages">
+     
+        <h1 class="heading-title">Our Gallary Page</h1>
+     
+        <img src="/static/images/gp1.jpg" alt="">
+        <img src="/static/images/gp2.jpg" alt="">
+        <img src="/static/images/gp3.jpg" alt="">
+        <img src="/static/images/gp5.jpg" alt="">
+        <img src="/static/images/gp8.jpg" alt="">
+        <img src="/static/images/gp7.jpg" alt="">
+        <img src="/static/images/gp4.jpg" alt="">
+        <img src="/static/images/gp3.jpg" alt="">
+        <img src="/static/images/gp6.jpg" alt="" style="height: 339px; width: 509px;">
+        <!-- <img src="/static/images/gp9.webp" alt=""> -->
+     
+        <div class="load-more"><span class="btn">load more</span></div>
+     
+     </section>  
+     <section class="footer">
+    
+        <div class="box-container">
+     
+           <div class="box">
+              <h3>quick links</h3>
+              <a href="/"> <i class="fas fa-angle-right"></i> home</a>
+              <a href="/package"> <i class="fas fa-angle-right"></i> package</a>
+              <a href="/gallary"> <i class="fas fa-angle-right"></i> Gallary</a>
+              <a href="/contactus"> <i class="fas fa-angle-right"></i>Contactus</a>
+           </div>
+     
+           <div class="box">
+              <h3>extra links</h3>
+             
+              <a href="/contactus"><i class="fas fa-angle-right"></i>Aboutus</a>
+              <a href="/pp"> <i class="fas fa-angle-right"></i> privacy policy</a>
+              <a href="/tc"> <i class="fas fa-angle-right"></i> terms of use</a>
+              <a href="/review"><i class="fas fa-angle-right"></i>Review Page</a>
+           </div>
+     
+           <div class="box">
+              <h3>contact info</h3>
+              <a href="#"> <i class="fas fa-phone"></i> +919409329562 </a>
+              <a href="#"> <i class="fas fa-phone"></i> +917016793588 </a>
+              <a href="#"> <i class="fas fa-envelope"></i>krishnatravels@gmail.com  </a>
+              <a href="#"> <i class="fas fa-map"></i> Ahmedabad-26,Gujrat </a>
+           </div>
+     
+           <div class="box">
+              <h3>follow us</h3>
+              <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+              <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+              <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+              <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+           </div>
+     
+        </div>
+     
+        <div class="credit">Copyright <span>Shree Krishna Travels</span> </span> | all rights reserved! </div>
+     
+     </section>
+     
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% extends 'base1.html' %}
+{% block content  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Package Page</title>
+
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+
+
+<!-- header section ends -->
+
+<div class="heading" style="background:url(/static/images/header-bg-2.png) no-repeat">
+   <h1>packages</h1>
+</div>
+
+<section class="home-packages">
+   
+   <h1 class="heading-title"> Our Packages </h1>
+   
+   <div class="box-container">
+
+      {% for i in packages %}
+            <div class="box">
+                <div class="image">
+                    <img src="{{i.photo.url}}" alt="">
+                </div>
+                <div class="content">
+                    <h3>{{i.name}}</h3>
+                    <h2>{{i.duration}}</h2>
+                    <p>{{i.description}}</p>
+                    <h1>Starting From</h1>
+                    <h3>{{i.Price}}</h3>
+
+                    <a href="/signup" class="btn">book now</a>
+                </div>
+            </div>   
+            {% endfor %}
+   </div>
+
+
+
+</section>
+<!-- packages section starts  -->
+
+
+<!-- packages section ends -->
+
+<!-- footer section starts  -->
+
+
+
+<!-- footer section ends -->
+
+<!-- swiper js link  -->
+
+
+<!-- custom js file link  -->
+
+</body>
+</html>
+
+{% endblock  %}

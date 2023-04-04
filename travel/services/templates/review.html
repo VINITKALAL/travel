@@ -1,0 +1,165 @@
+{% extends "base1.html" %}
+{% block content  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact us </title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+        *{
+      font-family: 'Poppins', sans-serif;
+       margin:0; padding:0;
+       box-sizing: border-box;
+       outline: none; border:none;
+       text-decoration: none;
+       text-transform: capitalize;
+    
+    }
+    
+    html{
+      overflow-x: hidden;
+      font-size: 62.5%;
+    }
+    
+        .contact .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    
+    .contact .row .contact-info .box{
+      margin:4rem 2rem;
+    }
+    
+    .contact .row .contact-info .box h3{
+      font-size: 4rem;
+      color:#333;
+    }
+    
+    .contact .row .contact-info .box h3 i{
+      color:#8e44ad;;
+    }
+    
+    .contact .row .contact-info .box p{
+      padding-left: 3rem;
+      font-size: 1.7rem;
+      color:#aaa;
+    }
+    
+    .contact .row .contact-form-container{
+      width:50%;
+    }
+    
+    .contact .row .contact-form-container h3{
+      font-size: 4rem;
+      padding-top: 4rem;
+      color:#8e44ad;
+    } 
+    
+    .contact .row .contact-form-container .inputBox{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .contact .row .contact-form-container .inputBox input{
+      width: 49%;
+    }
+    
+    .contact .row .contact-form-container form input, textarea{
+      outline: none;
+      border:.2rem solid #8e44ad;
+      height:4rem;
+      background:#fff;
+      padding:0 1rem;
+      margin:1rem 0;
+      font-size: 1.8rem;
+    }
+    
+    .contact .row .contact-form-container form textarea{
+      width:100%;
+      padding:1rem;
+      resize: none;
+      height:20%;
+    }
+    
+    .contact .row .contact-form-container form input[type="submit"]{
+      color:#8e44ad;
+      border:.2rem solid #8e44ad;;
+      cursor: pointer;
+      transition: .2s;
+      width:20rem;
+    }
+    
+    .contact .row .contact-form-container form input[type="submit"]:hover{
+      color:#fff;
+      background:#8e44ad;
+    }
+    
+      </style>
+</head>
+<body>
+  <div class="heading" style="background:url(/static/images/header-bg-3.png) no-repeat">
+    <h1>Review </h1> 
+  </div>
+  <section id="contact" class="contact">
+    <div class="row">
+    
+    <!-- <div class="contact-info">
+    
+        <div class="box">
+            <h3> <i class="fas fa-home"></i> address </h3>
+            <p>Iscon Cross Road,<br>
+               Satelite,Ahmedabad, <br>
+            Gujarat, <br>
+            380026.</p>
+        </div>
+    
+        <div class="box">
+            <h3> <i class="fas fa-envelope"></i> e-mail </h3>
+            <p>shreekrishnatravels@gmail.com</p>
+        </div>
+    
+        <div class="box">
+            <h3> <i class="fas fa-phone"></i> phone </h3>
+            <p>+9194093 29562 <br>
+              +9170167 93588</p>
+        </div>
+    
+    </div> -->
+    
+    <div class="contact-form-container">
+    
+        <form action="">
+    
+            <h3>Review</h3>
+    
+            <div class="inputBox">
+                <input type="text" placeholder="full name">
+                <input type="email" placeholder="e-mail">
+                <h3><label>Insert Memories!  </label><input type="file" name="img" id="img" style="padding: 5px;margin: 2px;"></h3>
+            </div>
+          
+                
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="review"></textarea>
+
+     
+            <center><input type="submit" value="Submit Review" style="align-items: center;"></center>
+
+
+    
+        </form>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+</body>
+</html>
+{% endblock %}

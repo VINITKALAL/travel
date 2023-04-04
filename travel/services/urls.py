@@ -7,10 +7,14 @@ from django.contrib.auth.views import logout_then_login
 urlpatterns = [
     path('', home1,name='homepage1'),
     path('signup/', UserRegistration.as_view(), name='signup'),
+    path('editprofile/<int:pk>/',Editprofile.as_view(),name="editprofile"),
     path('homepage/', homepage,name='homepage'),
     # path('homepage/', homepage,name="homepage"),
     # path('home1/', home1,name="home1"),
-    path('package/', package),
+    path('package/', package,name='package'),
+    path('package1/', package1,name='package1'),
+    path('booking/',Booking.as_view(),name='booking'),
+
     path('gallary/', gallary),
     path('contactus/', contactus),
     path('aboutus/', aboutus),
@@ -22,13 +26,18 @@ urlpatterns = [
     path('h/',h1),
     path('pay/',payment),
     path('con/',confirm),
-    path('myprofile/',myprofile),
-
+    path('change/',changeprofile),
+    path('package1/',p1),
+    path('gallary1/',g1),
+    path('contact1/',c1),
+    path('review/',rv),
+    path('myprofile/',profile,name='myprofile'),
+    path('changeprofile/',chprofile,name='changeprofile'),
     path(
         'change-password/',
         auth_views.PasswordChangeView.as_view(
             template_name='change.html',
-            success_url = '/home1/'
+            success_url = '/homepage/'
         ),
         name='change_password'),
 
@@ -42,7 +51,8 @@ urlpatterns = [
         name='login'),
 
     path('logout_then_login/',logout_then_login,name='logout_then_login')
-
+    
+    
 
 ]
 

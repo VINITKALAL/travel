@@ -1,0 +1,80 @@
+{% extends 'base1.html' %}
+{% block content  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Booking Page</title>
+
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+<!-- header section ends -->
+
+<div class="heading" style="background:url(/static/images/dark.webp) no-repeat">
+   <h1>Change My Profile</h1>
+</div>
+
+<!-- booking section starts  -->
+
+<section class="booking">
+
+
+   <form method="POST" class="book-form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+      <div class="flex">
+         <div class="inputBox">
+            <span>first name :</span>
+            {{form.first_name}}
+       </div>
+       <div class="inputBox">
+          <span>last name : </span>
+          {{form.last_name}}
+
+       </div>
+       <div class="inputBox">
+            <span>email id :</span>
+            {{form.email}}
+
+       </div>
+       <div class="inputBox">
+         <span>change photo :</span>
+         {{form.photo}}
+      </div>
+      </div><br><br>
+
+      <center><button type="submit" class="btn btn-primary">Update</button></center>
+
+   </form>
+
+</section>
+
+<!-- booking section ends -->
+<!-- footer section starts  -->
+
+
+<!-- footer section ends -->
+
+<!-- swiper js link  -->
+
+<!-- custom js file link  -->
+
+</body>
+</html>
+{% endblock %}

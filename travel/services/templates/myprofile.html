@@ -1,38 +1,82 @@
-{% extends "base.html" %}
+{% extends 'base1.html' %}
 {% block content  %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Booking Page</title>
+
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/static/css/style.css">
+
+
+
 </head>
 <body>
-    <section class="booking">
+   
+<!-- header section starts  -->
 
-        <h1 class="heading-title">My Profile</h1>
-     
-        <form action="/payment" method="post" class="book-form">
-     
-           <div class="flex">
-              <div class="inputBox">
-                 <span>first name :</span>
-                 <input type="text" placeholder="Your First Name is :" name="name">
-              </div>
-              <div class="inputBox">
-               <span>last name : </span>
-               <input type="text" placeholder="Your Last Name is :" name="name">
-            </div>
-              <div class="inputBox">
-                 <span>email id :</span>
-                 <input type="text" placeholder="Your Email ID is : " name="email">
-              </div>
-              
-              <br>
-        </form>
-     
-     </section>
+<!-- header section ends -->
+
+<div class="heading" style="background:url(/static/images/dark.webp) no-repeat">
+   <h1>My Profile</h1>
+</div>
+
+<!-- booking section starts  -->
+
+<section class="booking">
+   <div class="user-info1">
+      <center><img src="{{request.user.photo.url}}" alt="" ></center>
+   </div>
+   <br><br>
+
+   <form action="/payment" method="post" class="book-form">
+      
+      <div class="flex">
+         <div class="inputBox">
+            <span>first name :</span>
+            <input type="text" placeholder="Your First Name" name="name" value={{request.user.first_name}}>
+       </div>
+       <div class="inputBox">
+          <span>last name : </span>
+          <input type="text" placeholder="Your Last Name" name="name" value={{request.user.last_name}}>
+       </div>
+       <div class="inputBox">
+            <span>email id :</span>
+            <input type="email" placeholder="Your Email ID" name="email" value="{{request.user.email}}">
+       </div>
+       <div class="inputBox">
+          <span>contact no :</span>
+          <input type="text" placeholder="Your Contact Number " name="contactno">
+       </div>
+        
+      </div><br><br>
+
+
+   </form>
+
+</section>
+
+<!-- booking section ends -->
+<!-- footer section starts  -->
+
+
+<!-- footer section ends -->
+
+<!-- swiper js link  -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
 </body>
 </html>
-{% endblock  %}
+{% endblock %}

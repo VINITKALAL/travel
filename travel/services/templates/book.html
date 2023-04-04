@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 {% block content  %}
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,8 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="/static/css/style.css">
+   <link rel="stylesheet" href="/static/css/style.css">
+
 
 </head>
 <body>
@@ -34,16 +36,16 @@
 
    <h1 class="heading-title">book your trip!</h1>
 
-   <form action="/payment" method="post" class="book-form">
-
+   <form  method="POST" class="book-form">
+      {% csrf_token %}
       <div class="flex">
          <div class="inputBox">
             <span>name :</span>
-            <input type="text" placeholder="Enter Your Name" name="name">
+            <input type="text" placeholder="Enter Your Name" name="people_name">
          </div>
          <div class="inputBox">
             <span>City:</span>
-            <input type="text" placeholder="Enter Your City" name="location">
+            <input type="text" placeholder="Enter Your City" name="city">
          </div>
          <div class="inputBox">
             <span>phone :</span>
@@ -51,61 +53,58 @@
          </div>
          <div class="inputBox">
             <span>email :</span>
-            <input type="text" placeholder="Enter Your Address" name="address">
+            <input type="text" placeholder="Enter Your Address" name="email">
          </div>
          
          
          <div class="inputBox">
             <span>Journey Date :</span>
-            <input type="date" name="arrivals">
+            <input type="date" name="Journey_date">
          </div> 
          
          <div class="inputBox">
             <span>how many people :</span>
-            <input type="number" placeholder="Number Of People" name="guests">
+            <input type="number" placeholder="Number Of People" name="total_people">
          </div>
          <div class="inputBox">
             <span>Select your pickup point :</span>
-            <select name="city" id="">
+            {{form.pickup_point}}
+            <!-- <select name="pickup_point" id="">
                <option value="1">Ahmedabad</option>
                <option value="2">Surat</option>
                <option value="3">Baroda</option>
                <option value="4">Amreli</option>
                <option value="5">Bhavnagar</option>
-            </select>
+            </select> -->
          </div>
          <div class="inputBox">
             <span>Package :</span>
-            
-            <select name="Package" id="">
-               <option value="1">Dwarka</option>
-               <option value="2">Gir</option>
-               <option value="3">Somnath</option>
-               <option value="4">Statue of unity</option>
-               <option value="5"></option>
-               </select>
+            {{form.package}}
+            <!-- <select name="Package" id="">
+               {% for i in packages%}
+               <option value="{{i.id}}">{{i.name}}</option>
+               {% endfor %}
+               </select> -->
+         </div>
+         <div class="inputBox">
+            <span>Register :</span>
+            {{form.registration}}
+            <!-- <select name="Package" id="">
+               {% for i in packages%}
+               <option value="{{i.id}}">{{i.name}}</option>
+               {% endfor %}
+               </select> -->
          </div>
         
       </div>
 
-      <center><input type="submit" value="submit" class="btn" name="send"></center>
+      <button class="btn btn-primary btn-user btn-block">
+         Book
+     </button>
 
    </form>
 
 </section>
-
-<!-- booking section ends -->
-<!-- footer section starts  -->
-
-
-<!-- footer section ends -->
-
-<!-- swiper js link  -->
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-
 </body>
 </html>
 {% endblock %}
